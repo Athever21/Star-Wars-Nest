@@ -1,8 +1,8 @@
 import { Controller, Get, UseInterceptors, Post, Body } from "@nestjs/common";
-import CreateUserDto from "./dto/createUser.dto";
-import MongooseClassSerializerInterceptor from "./mongooseClassSerializer.interceptor";
-import { User } from "./users.model";
-import { UsersSerivce } from "./users.service";
+import CreateUserDto from "../dto/createUser.dto";
+import MongooseClassSerializerInterceptor from "../mongooseClassSerializer.interceptor";
+import { User } from "../users.model";
+import { UsersSerivce } from "../services/users.service";
 
 @Controller('/users')
 @UseInterceptors(MongooseClassSerializerInterceptor(User))
