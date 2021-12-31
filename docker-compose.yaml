@@ -17,12 +17,14 @@ services:
     env_file: ./.env
     environment:
       - MONGO_URI=mongodb://mongo:27017/sw
-      - REDIS_URL=redis://cache
+      - REDIS_URL=redis
     ports:
       - $PORT:3001
     volumes:
       - ./:/code
   redis:
     image: "redis:alpine"
+    ports:
+      - 6379:6379
 volumes:
   db:
